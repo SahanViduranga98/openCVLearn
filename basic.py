@@ -10,4 +10,8 @@ cv.imshow('Cat_gary',gray) #show image in new window
 #(7,7) is the kernel size, has to an odd number, increasing kernal number-->more blur
 blur = cv.GaussianBlur(img,(7,7),cv.BORDER_DEFAULT)
 cv.imshow('Blur',blur) #show image in new window
+
+#edge cascade
+canny = cv.Canny(img,125,175)
+cv.imshow('Canny',canny) #show image in new window
 cv.waitKey(0)
