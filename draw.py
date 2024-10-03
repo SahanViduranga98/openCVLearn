@@ -22,6 +22,10 @@ cv.circle(blank,(blank.shape[1]//2,blank.shape[0]//2),40,(0,0,255))
 #draw a line
 #line draws from 0,0 to 250,250
 cv.line(blank,(0,0),(blank.shape[1]//2,blank.shape[0]//2),(255,0,0),thickness=3)
+
+#write text on image
+#(image, text,text putting start place, font, font size)
+cv.putText(blank,'Hello Sahan',(225,225),cv.FONT_HERSHEY_TRIPLEX,1.0,(0,255,0),2)
 cv.imshow("blank",blank)
 cv.waitKey(0)
 #img = cv.imread('photos/brownCat.jpg')
