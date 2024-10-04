@@ -7,6 +7,8 @@ cv.imshow('brown cat', img)
 gray =cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 cv.imshow('brown cat_gray', gray)
 
+blank=np.zeros(img.shape,dtype='uint8')
+cv.imshow('black',blank)
 #edge detection
 canny = cv.Canny(img,125,175)
 cv.imshow('brown cat_edge detection', canny)
@@ -26,4 +28,7 @@ cv.imshow('brown cat_thresh', thresh)
 
 contours,hirerarchies =cv.findContours(thresh,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE)
 print(f'{len(contours)} contours found')
+
+cv.drawContours(blank,contours,-1,(0,0,255),1)
+cv.imshow('Contours Drawn',blank)
 cv.waitKey(0)
