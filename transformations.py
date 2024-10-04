@@ -37,6 +37,14 @@ def rotate(img, angle,rotPoint=None):
     dimensions =(width,height)
 
     return cv.warpAffine(img,rotMat,dimensions)
+# angle --> +-->anti clock wise angle
 rotated=rotate(img_resize,45)
 cv.imshow('rotated',rotated)
+
+ #flipping an image -->mirrior
+ # 0-->mirrir in vertical
+ #1-->mirrir in horizontal
+ #-1 -->mirrir in both directions
+flip=cv.flip(img_resize,0)
+cv.imshow('flipped',flip)
 cv.waitKey(0)
