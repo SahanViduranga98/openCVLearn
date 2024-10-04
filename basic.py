@@ -23,4 +23,13 @@ cv.imshow('Dilated',dilated) #show image in new window
 #Eroding
 eroded =cv.erode(dilated,(3,3),iterations=1)
 cv.imshow('Eroding',eroded) #show image in
+
+
+#resize an image
+#interpollaton =cv.Inter_Area-->shrinking image to smaller size
+#interpollaton =cv.Inter_Cubic-->shrinking image to larger size
+resized = cv.resize(img,(500,500),interpolation=cv.INTER_AREA)
+cv.imshow('Resized',resized) #show image in new
+
+#cropping
 cv.waitKey(0)
