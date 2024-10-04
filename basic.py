@@ -32,4 +32,6 @@ resized = cv.resize(img,(500,500),interpolation=cv.INTER_AREA)
 cv.imshow('Resized',resized) #show image in new
 
 #cropping
+cropped =img[50:200,50:200]
+cv.imshow('Cropping',cropped) #
 cv.waitKey(0)
