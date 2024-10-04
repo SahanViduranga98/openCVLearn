@@ -11,13 +11,19 @@ cv.imshow('brown cat_gray', gray)
 canny = cv.Canny(img,125,175)
 cv.imshow('brown cat_edge detection', canny)
 
+
+
+ret,thresh =cv.threshold(gray,125,255,cv.THRESH_BINARY)
+cv.imshow('brown cat_thresh', thresh)
+
 #contour detection
 #contours is a list of all the coordinates of the contours that were fouund in the image
 #hierarchy is a list of hierachical representations of the contours
 #cv.RETR_LIST returns the all the contours find in the image
 #cv.RETR_Exterior returns the all the contours found in the  outside
 #cv.RETR_Tree returns the all the contours found in the interior
-#v.CHAIN_APPROX_NONE,v.CHAIN_APPROX_SIMPLE
-contours,hirerarchies =cv.findContours(canny,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE)
+#cv.CHAIN_APPROX_NONE,v.CHAIN_APPROX_SIMPLE
+
+contours,hirerarchies =cv.findContours(thresh,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE)
 print(f'{len(contours)} contours found')
 cv.waitKey(0)
