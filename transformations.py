@@ -25,4 +25,18 @@ def translate(img,x,y):
 
 translated =translate(img_resize, 100,100)
 cv.imshow('translated',translated)
+
+#rotation
+def rotate(img, angle,rotPoint=None):
+    (height, width)=img.shape[:2]
+
+    if rotPoint is None:
+        rotPoint=(width//2,height//2)
+    # 1.0 is the scaling factor
+    rotMat = cv.getRotationMatrix2D(rotPoint,angle,1.0)
+    dimensions =(width,height)
+
+    return cv.warpAffine(img,rotMat,dimensions)
+rotated=rotate(img_resize,45)
+cv.imshow('rotated',rotated)
 cv.waitKey(0)
