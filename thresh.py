@@ -9,4 +9,9 @@ cv.imshow('thresh',thresh)
 #inverese simple threshold img
 threshold,thresh_inv =cv.threshold(gray,150,255,cv.THRESH_BINARY_INV)
 cv.imshow('thresh inv',thresh_inv)
+
+#adaptive threshold
+adaptive_thrshold = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,3)
+cv.imshow('Adaptive',adaptive_thrshold)
+
 cv.waitKey(0)
